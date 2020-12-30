@@ -1,0 +1,23 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Gallery";
+}
+
+<div class="text-center" ng-controller="imgsCntrl">
+    <form id="searchBarDiv">
+        <input
+        id="searchBar"
+        type="text"
+        placeholder="search by image name..."
+        ng-change="search()"
+        ng-model="searchKey"
+        />
+    </form>
+    <div class="gallery">
+      <div class="gall-item" ng-repeat="img in imgsList">
+        <img ng-src="{{img.url}}" />
+          <text> Name: <span>{{img.name.toUpperCase()}}</span></text>
+      </div>
+    </div>
+</div>
